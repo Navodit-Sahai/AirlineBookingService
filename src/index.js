@@ -11,8 +11,11 @@ const setupAndStartServer=()=>{
     app.use('/api',ApiRoutes);
     app.listen(PORT,()=>{
         console.log(`server started at ${PORT}`);
+        console.log(process.env.FLIGHT_SERVICE_PATH);
+
         if(process.env.DB_SYNC){
             db.sequelize.sync({alter:true});
         }
     })
 }
+setupAndStartServer();
