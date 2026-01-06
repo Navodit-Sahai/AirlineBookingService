@@ -19,9 +19,8 @@ class BookingRepository {
             );
         }
     }
-    async update(data){
-        
-    }
+    
+    
 }
 
 module.exports = BookingRepository;
