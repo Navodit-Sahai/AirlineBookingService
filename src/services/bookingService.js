@@ -25,8 +25,8 @@ class BookingService{
             await axios.patch(updateFlightURL,{
                 totalSeats: flightData.totalSeats - data.noOfSeats
             });
-
-            return booking;
+            const final_booking=await this.bookingRepository.update(booking.id,{status:"Booked"});
+            return final_booking;
 
         }catch(error){
             console.log(error);
